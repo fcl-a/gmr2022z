@@ -6,7 +6,7 @@ ENV APP_ROOT /code
 ENV APP_VERSION 0.29.4
 
 RUN apk add --no-cache --virtual .build-deps ca-certificates bash curl unzip php7
-RUN apk add --update --no-cache curl python3-dev gcc g++ libc-dev \
+RUN apk add --update --no-cache curl gcc g++ libc-dev \
     && rm -rf /var/cache/apk/*
     
 RUN curl -sL https://github.com/aploium/zmirror/archive/v${APP_VERSION}.tar.gz | tar -xz -C / \
@@ -14,8 +14,8 @@ RUN curl -sL https://github.com/aploium/zmirror/archive/v${APP_VERSION}.tar.gz |
     && mv /zmirror-${APP_VERSION} ${APP_ROOT}/zmirror \
     && cd ${APP_ROOT}/zmirror \
     # && pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple \
-    && python -m pip install --no-cache-dir -r requirements.txt \
-    && python -m pip install gunicorn \
+    && pip install --no-cache-dir -r requirements.txt \
+    && pip install gunicorn \
     && cat more_configs/config_google_and_zhwikipedia.py > config.py
     
 COPY nginx/default.conf.template /etc/nginx/conf.d/default.conf.template

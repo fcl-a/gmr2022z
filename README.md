@@ -1,5 +1,5 @@
 ## v2ray-heroku
-[![](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/fcl-a/gmr2022.git)
+[![](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/fcl-a/gmr2022z.git)
 
 ### heroku上部署v2ray
 - [x] 支持VMess和VLESS两种协议
